@@ -149,12 +149,12 @@ class SeigaUserExtractor(SeigaExtractor):
         params = {"sort": self.order, "page": self.start_page,
                   "target": "illust_all"}
 
+        metadata = None
         while True:
             cnt = 0
             page = self.request(url, params=params).text
-
-            if params["page"] == self.start_page:
-                yield self.get_metadata(page)
+            if not metadata:
+                metadata = self.get_metadata(page)
 
             for info in text.extract_iter(
                     page, '<li class="list_item', '</a></li> '):
@@ -167,7 +167,7 @@ class SeigaUserExtractor(SeigaExtractor):
                 ))[0]
                 for key in ("image_id", "views", "comments", "clips"):
                     data[key] = text.parse_int(data[key])
-                yield data
+                yield {**data, **metadata}
                 cnt += 1
 
             if cnt < 40:
