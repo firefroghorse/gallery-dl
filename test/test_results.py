@@ -537,6 +537,9 @@ class TestPathfmt():
     def part_size(self):
         return 0
 
+    def part_enable(self, part_directory):
+        return None
+
 
 class TestFormatter(formatter.StringFormatter):
 

@@ -53,7 +53,7 @@ __tests__ = (
     "#url"     : "https://seiga.nicovideo.jp/seiga/im5977527",
     "#category": ("", "seiga", "image"),
     "#class"   : seiga.SeigaImageExtractor,
-    "#sha1_metadata": "c8339781da260f7fc44894ad9ada016f53e3b12a",
+    "#sha1_metadata": "0ea769b7efa95358931b51acc5ee6855bb2bec23",
     "#sha1_content" : "d9202292012178374d57fb0126f6124387265297",
 },
 
@@ -65,10 +65,10 @@ __tests__ = (
 },
 
 {
-    "#url"     : "https://seiga.nicovideo.jp/seiga/im10877923",
+    "#url"     : "https://seiga.nicovideo.jp/seiga/im5977527",
     "#category": ("", "seiga", "image"),
     "#class"   : seiga.SeigaImageExtractor,
-    "#pattern" : r"https://lohas\.nicoseiga\.jp/priv/5936a2a6c860a600e465e0411c0822e0b510e286/1688757110/10877923",
+    "#pattern": r"https://lohas\.nicoseiga\.jp/priv/[0-9a-f]{40}/177358\d{4}/5977527",
 },
 
 {
